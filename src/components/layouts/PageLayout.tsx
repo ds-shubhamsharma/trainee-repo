@@ -1,6 +1,6 @@
 import * as React from "react";
 import BannerSlide from "./bannerSlide";
-import Footer from "./footer";
+// import Footer from "./footer";
 import Header from "./header";
 import Nav from "./Nav";
 
@@ -20,12 +20,12 @@ const PageLayout = ({ title, _site, global, children }: Props) => {
       />
       <BannerSlide />
       {children}
-      <Footer
+      {/* <Footer
         footerServices={global.c_footerServices}
         getHelps={global.c_getHelps}
         moreStuff={global.c_moreStuff}
         onlineShop={global.c_onlineShop}
-      />
+      /> */}
     </>
   );
 };
