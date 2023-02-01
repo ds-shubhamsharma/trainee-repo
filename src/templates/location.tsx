@@ -74,6 +74,7 @@ export const config: TemplateConfig = {
       "mainPhone",
       "hours",
       "slug",
+      "c_imageDetails",
       "timezone",
       "yextDisplayCoordinate",
       "displayCoordinate",
@@ -288,6 +289,7 @@ const Location: Template<ExternalApiRenderData> = ({
     photoGallery,
     c_banner_image,
     c_canonical,
+    c_imageDetails,
     description,
     additionalHoursText,
     timezone,
@@ -333,96 +335,96 @@ const Location: Template<ExternalApiRenderData> = ({
       hoursSchema.push(openIntervalsSchema);
     }
   }
-  // document.dm_directoryParents &&
-  //   document.dm_directoryParents.map((i: any, index: any) => {
-  //     if (i.meta.entityType.id == "ce_country") {
-  //       document.dm_directoryParents[index].name =
-  //         document.dm_directoryParents[index].name;
-  //       document.dm_directoryParents[index].slug =
-  //         document.dm_directoryParents[index].slug;
+  document.dm_directoryParents &&
+    document.dm_directoryParents.map((i: any, index: any) => {
+      if (i.meta.entityType.id == "ce_country") {
+        document.dm_directoryParents[index].name =
+          document.dm_directoryParents[index].name;
+        document.dm_directoryParents[index].slug =
+          document.dm_directoryParents[index].slug;
 
-  //       breadcrumbScheme.push({
-  //         "@type": "ListItem",
-  //         position: index,
-  //         item: {
-  //           "@id":
-  //             stagingBaseurl +
-  //             document.dm_directoryParents[index].slug +
-  //             ".html",
-  //           name: i.name,
-  //         },
-  //       });
-  //     } else if (i.meta.entityType.id == "ce_region") {
-  //       let url = "";
-  //       document.dm_directoryParents.map((j: any) => {
-  //         if (
-  //           j.meta.entityType.id != "ce_region" &&
-  //           j.meta.entityType.id != "ce_city" &&
-  //           j.meta.entityType.id != "ce_root"
-  //         ) {
-  //           // console.log(j, "j");
-  //           url = url + j.slug;
-  //         }
-  //       });
-  //       breadcrumbScheme.push({
-  //         "@type": "ListItem",
-  //         position: index,
-  //         item: {
-  //           "@id":
-  //             stagingBaseurl +
-  //             url +
-  //             "/" +
-  //             document.dm_directoryParents[index].slug +
-  //             ".html",
-  //           name: i.name,
-  //         },
-  //       });
-  //     } else if (i.meta.entityType.id == "ce_city") {
-  //       let url = "";
-  //       document.dm_directoryParents.map((j: any) => {
-  //         if (
-  //           j.meta.entityType.id != "ce_city" &&
-  //           j.meta.entityType.id != "ce_root"
-  //         ) {
-  //           // console.log(j, "j");
-  //           url = url + "/" + j.slug;
-  //         }
-  //       });
-  //       breadcrumbScheme.push({
-  //         "@type": "ListItem",
-  //         position: index,
-  //         item: {
-  //           "@id":
-  //             stagingBaseurl +
-  //             url +
-  //             "/" +
-  //             document.dm_directoryParents[index].slug +
-  //             ".html",
-  //           name: i.name,
-  //         },
-  //       });
-  //     }
-  //   });
+        breadcrumbScheme.push({
+          "@type": "ListItem",
+          position: index,
+          item: {
+            "@id":
+              stagingBaseurl +
+              document.dm_directoryParents[index].slug +
+              ".html",
+            name: i.name,
+          },
+        });
+      } else if (i.meta.entityType.id == "ce_region") {
+        let url = "";
+        document.dm_directoryParents.map((j: any) => {
+          if (
+            j.meta.entityType.id != "ce_region" &&
+            j.meta.entityType.id != "ce_city" &&
+            j.meta.entityType.id != "ce_root"
+          ) {
+            // console.log(j, "j");
+            url = url + j.slug;
+          }
+        });
+        breadcrumbScheme.push({
+          "@type": "ListItem",
+          position: index,
+          item: {
+            "@id":
+              stagingBaseurl +
+              url +
+              "/" +
+              document.dm_directoryParents[index].slug +
+              ".html",
+            name: i.name,
+          },
+        });
+      } else if (i.meta.entityType.id == "ce_city") {
+        let url = "";
+        document.dm_directoryParents.map((j: any) => {
+          if (
+            j.meta.entityType.id != "ce_city" &&
+            j.meta.entityType.id != "ce_root"
+          ) {
+            // console.log(j, "j");
+            url = url + "/" + j.slug;
+          }
+        });
+        breadcrumbScheme.push({
+          "@type": "ListItem",
+          position: index,
+          item: {
+            "@id":
+              stagingBaseurl +
+              url +
+              "/" +
+              document.dm_directoryParents[index].slug +
+              ".html",
+            name: i.name,
+          },
+        });
+      }
+    });
 
-  // breadcrumbScheme.push({
-  //   "@type": "ListItem",
-  //   position: 4,
-  //   item: {
-  //     "@id": stagingBaseurl + path,
-  //     name: document.name,
-  //   },
-  // });
-  // let imageurl = photoGallery
-  //   ? photoGallery.map((element: any) => {
-  //       return element.image.url;
-  //     })
-  //   : null;
-  // // console.log(document);
-  // let bannerimage = c_banner_image && c_banner_image.image.url;
+  breadcrumbScheme.push({
+    "@type": "ListItem",
+    position: 4,
+    item: {
+      "@id": stagingBaseurl + path,
+      name: document.name,
+    },
+  });
+  let imageurl = photoGallery
+    ? photoGallery.map((element: any) => {
+        return element.image.url;
+      })
+    : null;
+  // console.log(document);
+  let bannerimage = c_banner_image && c_banner_image.image.url;
 
   return (
     <>
-      {/* <JsonLd<Store>
+      <JsonLd<Store>
         item={{
           "@context": "https://schema.org",
           "@type": "DepartmentStore",
@@ -451,7 +453,7 @@ const Location: Template<ExternalApiRenderData> = ({
 
           itemListElement: breadcrumbScheme,
         }}
-      /> */}
+      />
 
       <AnalyticsProvider
         templateData={templateData}
@@ -526,6 +528,8 @@ const Location: Template<ExternalApiRenderData> = ({
                     ""
                   )}
                 </div>
+                <PhotoGallery photoGallery={c_imageDetails} />
+
               </div>
             </div>
           </PageLayout>
