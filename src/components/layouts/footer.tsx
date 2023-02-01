@@ -9,11 +9,12 @@ type props = {
 };
 const Footer = (props: any) => {
   const { footerServices, getHelps, moreStuff, onlineShop } = props;
+
   return (
     <>
-      <div className="container-fluid">
+      
         <footer className="footer">
-          <div className="container">
+        <div className="container-fluid">
             <div className="row">
               <div className="footer-col">
                 {footerServices?.map((service: any) => {
@@ -103,7 +104,7 @@ const Footer = (props: any) => {
             </div> */}
           </div>
         </footer>
-      </div>
+    
     </>
   );
 };

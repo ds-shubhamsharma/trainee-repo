@@ -99,10 +99,10 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-   var url = "";
-   var name: any = document.name.toLowerCase();
-   var string: any = name.toString();;
-   let result: any = string.replaceAll(" ", "-");
+  var url = "";
+  var name: any = document.name.toLowerCase();
+  var string: any = name.toString();
+  let result: any = string.replaceAll(" ", "-");
   // document.dm_directoryParents.map((result: any, i: Number) => {
   //   if (i > 0) {
   //     url += result.slug + "/"
@@ -155,7 +155,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     //       }`,
     //     },
     //   },
-
     //   {
     //     type: "meta",
     //     attributes: {
@@ -163,7 +162,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     //       content: StaticData.Brandname,
     //     },
     //   },
-
     //   {
     //     type: "meta",
     //     attributes: {
@@ -171,7 +169,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     //       content: "noindex, nofollow",
     //     },
     //   },
-
     //   {
     //     type: "link",
     //     attributes: {
@@ -183,7 +180,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     //       }.html`,
     //     },
     //   },
-
     //   {
     //     type: "meta",
     //     attributes: {
@@ -243,7 +239,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     //       }`,
     //     },
     //   },
-      /// twitter tag
+    /// twitter tag
     // ],
   };
 };
@@ -300,7 +296,7 @@ const Location: Template<ExternalApiRenderData> = ({
   } = document;
   let templateData = { document: document, __meta: __meta };
   let hoursSchema = [];
-  let breadcrumbScheme:any = [];
+  let breadcrumbScheme: any = [];
   for (var key in hours) {
     if (hours.hasOwnProperty(key)) {
       let openIntervalsSchema = "";
@@ -529,7 +525,6 @@ const Location: Template<ExternalApiRenderData> = ({
                   )}
                 </div>
                 <PhotoGallery photoGallery={c_imageDetails} />
-
               </div>
             </div>
           </PageLayout>

@@ -5,8 +5,8 @@ import "react-slideshow-image/dist/styles.css";
 import "../../assets/css/banner.css";
 const BannerSlide = () => {
   const images = [
-    "https://images.unsplash.com/photo-1674505921901-e54fe119f0a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    "https://images.unsplash.com/photo-1519747180378-d55bc9a23efd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "https://i.pinimg.com/564x/c9/f8/5d/c9f85d1a1dbb9a819afe7c6998c9d159.jpg",
+    "https://i.pinimg.com/564x/0e/73/4f/0e734f0371d50d6cb59ea698af6940ce.jpg",
     "https://images.unsplash.com/photo-1514907283155-ea5f4094c70c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
   ];
 
