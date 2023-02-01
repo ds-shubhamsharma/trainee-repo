@@ -1,5 +1,4 @@
 import * as React from "react";
-import "..//../assets/css/footerCss.css";
 
 type props = {
   footerServices: any;
@@ -12,63 +11,9 @@ const Footer = (props: any) => {
 
   return (
     <>
-      {/* <footer className="footer">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="footer-col">
-              {footerServices?.map((service: any) => {
-                return (
-                  <>
-                    <h3>
-                      {" "}
-                      <a href="#">{service.label}</a>{" "}
-                    </h3>
-                  </>
-                );
-              })}
-            </div>
-            <div className="footer-col">
-              {getHelps?.map((getHelp: any) => {
-                return (
-                  <>
-                    <h3>
-                      {" "}
-                      <a href="#">{getHelp.label}</a>{" "}
-                    </h3>
-                  </>
-                );
-              })}
-            </div>
-            <div className="footer-col">
-              {onlineShop?.map((onlineShops: any) => {
-                return (
-                  <>
-                    <h3>
-                      {" "}
-                      <a href="#">{onlineShops.label}</a>{" "}
-                    </h3>
-                  </>
-                );
-              })}
-            </div>
-            <div className="footer-col">
-              {moreStuff?.map((moreStuffs: any) => {
-                return (
-                  <>
-                    <h3 className="">
-                      {" "}
-                      <a href="#"> {moreStuffs.label}</a>
-                    </h3>
-                  </>
-                );
-              })}
-            </div>
-          </div>
-          
-        </div>
-      </footer> */}
+     
 
-      <footer className="footer-1 bg-black py-8 sm:py-12">
+      <footer className="footer-1 bg-gray py-8 sm:py-12">
         <div className="container mx-auto px-4">
           <div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4 gap-20">
             <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">

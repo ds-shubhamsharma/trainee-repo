@@ -9,7 +9,7 @@ const Header = (props: any) => {
   const { headerLogo, headerLinks } = props;
 
   return (
-    <div className="" style={{ backgroundColor: "#101010" }}>
+    <div className="bg-black">
       <div className="centered-container">
         <nav className="py-6 flex items-center justify-between">
          
