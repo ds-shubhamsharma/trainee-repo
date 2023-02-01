@@ -173,7 +173,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
             <div className="button-bx">
               <Link
                 type="button"
-                href={`/${result.rawData.id}`}
+                href={`/${result.rawData.slug}.html`}
                 className=" btn notHighlight "
                 data-ya-track={`viewStore -${result.rawData.name}`}
                 eventName={`viewStore -${result.rawData.name}`}
