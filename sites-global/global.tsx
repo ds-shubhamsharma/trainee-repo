@@ -7,7 +7,7 @@ export const baseuRL =
   "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=500";
 export const apikey_for_entity = "ea7ea73738da090eba9cafbc45220b0b";
 export const favicon =
-  "https://a.mktgcdn.com/p-sandbox/JPBowt854rpiZHUkXeMpcoAAma6yNy_ph09d3CDaFxY/304x154.png";
+  "https://steam.coffee/wp-content/uploads/2017/11/cropped-favicon.png";
 export const apiKey = "29351ec5221c7f4d91ee576f8961b11c";
 export const googleApikey = "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";
 export const regionNames = new Intl.DisplayNames(["en"], { type: "region" });

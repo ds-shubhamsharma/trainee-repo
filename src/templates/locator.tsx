@@ -113,7 +113,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
          type: "meta",
          attributes: {
            property: "og:image",
-          //  content: favicon,
+           content: favicon,
          },
        },
        {
@@ -141,7 +141,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:image",
-          // content: favicon
+          content: favicon
         },
       },
      ],
