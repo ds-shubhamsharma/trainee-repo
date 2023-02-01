@@ -1,0 +1,22 @@
+{
+  "$id": "site-entity",
+  "filter": {
+    "entityIds": ["DynamicData"]
+  },
+  "source": "knowledgeGraph",
+  "fields": [
+    "name",
+    "c_headerLogo",
+    "c_navigationLink",
+    "c_footerImage",
+    "c_footerServices",
+    "c_getHelps",
+    "c_onlineShop",
+    "c_moreStuff",
+    "c_imageForBanner"
+  ],
+  "localization": {
+    "locales": ["en"],
+    "primary": false
+  }
+}
