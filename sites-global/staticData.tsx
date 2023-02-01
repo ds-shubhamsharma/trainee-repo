@@ -17,7 +17,7 @@ export const StaticData = {
     FAQheading:"How can we help ?",
     getDirection:"Directions",
     AllRegion:"All Regions of",
-    NearStoretext:"NEARBY LOCATIONS",
+    NearStoretext:"NEAR BY LOCATIONS",
     AllLocationtext:"View All Location",
     PagenotFound:"404 - Page Not Found",
     cantfind_page:"We're really sorry, we can't find the page you're looking for",
