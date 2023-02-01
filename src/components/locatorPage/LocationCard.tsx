@@ -82,7 +82,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                   data-ya-track={`viewDetail -${result.rawData.name}`}
                   eventName={`viewDetail -${result.rawData.name}`}
                   rel="noopener noreferrer"
-                  href={`/${result.rawData.slug}`}
+                  href={`/${result.rawData.slug}.html`}
                 >
                   {result.rawData.name}
                 </Link>
