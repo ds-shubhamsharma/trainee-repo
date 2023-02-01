@@ -1096,7 +1096,7 @@ nav[aria-label="Pagination"] button:disabled {
 
 /* footer sec */
 /* footer sec */
-.site-footer {
+/* .site-footer {
   @apply pt-8 lg:pt-0;
 }
 .site-footer .container {
@@ -1201,7 +1201,7 @@ nav[aria-label="Pagination"] button:disabled {
 }
 .site-footer .MuiPaper-elevation .MuiTypography-root li a {
   @apply !font-normal !font-main-font;
-}
+} */
 
 @keyframes spinner {
   0% {
