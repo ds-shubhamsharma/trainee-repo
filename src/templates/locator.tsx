@@ -46,7 +46,7 @@ import {
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 
 export const getPath: GetPath<TemplateProps> = () => {
-  return `index.html`;
+  return `/index.html`;
 };
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
