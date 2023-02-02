@@ -1,19 +1,19 @@
 import { Link } from "@yext/pages/components";
 import * as React from "react";
-import abbanner from "../../images/ab-banner.jpg"
-import dt12 from "../../images/dtl2.jpg"
-import PhotoSlider from "./PhotoSlider"
-import RtfConverter from "@yext/rtf-converter";
+// import abbanner from "../../images/ab-banner.jpg"
+// import dt12 from "../../images/dtl2.jpg"
+// import PhotoSlider from "./PhotoSlider"
+// import RtfConverter from "@yext/rtf-converter";
 
 export default function About(props: any) {
-  function convertToRtf(rtf:any) {
-    rtf = rtf.replace(/\\par[d]?/g, "");
-    rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "")
-    rtf=rtf.replace('/','');
-    rtf=rtf.replace(';','');
-    rtf=rtf.replace('-','');
-    return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
-}
+//   function convertToRtf(rtf:any) {
+//     rtf = rtf.replace(/\\par[d]?/g, "");
+//     rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "")
+//     rtf=rtf.replace('/','');
+//     rtf=rtf.replace(';','');
+//     rtf=rtf.replace('-','');
+//     return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
+// }
   return (
     <>
       <div className="about-sec ">
@@ -32,11 +32,11 @@ export default function About(props: any) {
                     : ''}
               </div>
           </div>
-          <div className="about-content">
+          {/* <div className="about-content">
             <div className="mb-4">
               <h2>{props.name}</h2>
               <div className="">
-              <div class="about-content-inner" dangerouslySetInnerHTML={{__html: convertToRtf(props.description)}}/>
+              <div className="about-content-inner" dangerouslySetInnerHTML={{__html: convertToRtf(props.description)}}/>
               </div>
               {props.c_viewMore.link&&props.c_viewMore.label?
               <div className="content-center w-full ">
@@ -48,7 +48,7 @@ export default function About(props: any) {
               </div>
               :''}
             </div>
-          </div>
+          </div> */}
         </div>
         </div>
       </div>

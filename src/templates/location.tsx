@@ -36,7 +36,6 @@ import CustomMap from "../components/locationDetail/CustomMap";
 import BreadCrumbs from "../components/layouts/Breadcrumb";
 import StoreHighlight from "../components/locationDetail/SoreHighlight";
 import OpenClose from "../components/commons/openClose";
-import Faq from "../components/locationDetail/Faqs";
 import { StaticData } from "../../sites-global/staticData";
 
 import {
@@ -50,12 +49,16 @@ import {
 import {
   AnalyticsProvider,
   AnalyticsScopeProvider,
+  Link,
 } from "@yext/pages/components";
 import FeaturesBrand from "../components/locationDetail/FeaturesBrand";
 import { Fade, Slide } from "react-awesome-reveal";
 import MgmTimber from "../components/locationDetail/MgmTimber";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import Header from "../components/layouts/header";
+import Example from "../components/locationDetail/AccordianItem";
+import FaqAccordian from "../components/locationDetail/AccordianItem";
+import Services from "../components/locationDetail/Services";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -78,6 +81,11 @@ export const config: TemplateConfig = {
       "timezone",
       "yextDisplayCoordinate",
       "displayCoordinate",
+      "c_locationServicesData",
+      "c_aboutSectionForLocation",
+      "c_faqData.name",
+      "c_faqData.answer",
+
       // "cityCoordinate",
     ],
     // Defines the scope of entities that qualify for this stream.
@@ -292,7 +300,11 @@ const Location: Template<ExternalApiRenderData> = ({
     displayCoordinate,
     cityCoordinate,
     name,
+    c_locationServicesData,
+    c_aboutSectionForLocation,
+    c_faqData,
   } = document;
+  // console.log("c_locationServicesData", c_locationServicesData);
   let templateData = { document: document, __meta: __meta };
   let hoursSchema = [];
   let breadcrumbScheme: any = [];
@@ -524,6 +536,29 @@ const Location: Template<ExternalApiRenderData> = ({
                   )}
                 </div>
                 <PhotoGallery photoGallery={c_imageDetails} />
+                <div>
+                  {" "}
+                  <Services serviceData={c_locationServicesData} />
+                </div>
+
+                <div className="flex w-full mt-[140px]">
+                  <PhotoSlider photoGallery={_site.c_imageForBanner} />
+                  <div className="flex w-1/2 flex-col">
+                    <h1>About</h1>
+                    <span style={{ fontFamily: "cursive" }}>
+                      {c_aboutSectionForLocation.description}
+                    </span>
+                    <Link href={""}>
+                      <button className="bg-[#894578]  hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        {c_aboutSectionForLocation.viewMore.label}
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="mt-[90px]">
+                  <FaqAccordian Question={c_faqData} />
+                </div>
               </div>
             </div>
           </PageLayout>

@@ -18,7 +18,7 @@ const PageLayout = ({ title, _site, global, children }: Props) => {
         headerLogo={global.c_headerLogo.headerLogo}
         headerLinks={global.c_navigationLink}
       />
-      <BannerSlide />
+      <BannerSlide imageForBanner={global.c_imageForBanner} />
       {children}
       <Footer
         footerServices={global.c_footerServices}
