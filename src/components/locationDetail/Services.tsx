@@ -5,37 +5,56 @@ type props = {
 };
 const Services = (props: any) => {
   const { serviceData } = props;
- 
+
   return (
     <>
-     
-       <>
-      <h1 className="text-center mb-10" style={{color:"#894578"}}>Services</h1>
-      <div className="container ">
-        <div className="servicesList service-mid flex flex-wrap gap-y-5">
-          {serviceData?.map((Data: any) => (
-            <div className="block-content flex w-1/4">
-              <svg
-                className="check-icon w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 17.008 16.472"
-              >
-                <path
-                  d="M671.943,10.391,664.63,23.008a1.335,1.335,0,0,1-1.833.491l-6-3.449a1.34,1.34,0,1,1,1.344-2.318l4.835,2.781L669.62,9.055a1.34,1.34,0,0,1,2.323,1.336Z"
-                  transform="translate(-655.623 -7.795)"
-                  fill="#894578"
-                  stroke="#894578"
-                  strokeMiterlimit={6}
-                  strokeWidth={1}
-                  fillRule="nonzero"
-                />
-              </svg>
-              {Data.label}
-            </div>
-          ))}
+      <>
+        <h1 className="text-center mb-10" style={{ color: "#894578" }}>
+          Services
+        </h1>
+        <div className="container ">
+          <div className="servicesList service-mid flex flex-wrap gap-y-5">
+            {serviceData?.map((Data: any) => (
+              <div className="block-content flex w-1/4">
+                <svg
+                  version="1.0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20.000000pt"
+                  height="20.000000pt"
+                  viewBox="0 0 128.000000 20.000000"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <g
+                    transform="translate(0.000000,127.000000) scale(0.100000,-0.100000)"
+                    fill="#894578"
+                    stroke="none"
+                  >
+                    <path
+                      d="M575 1264 c-95 -13 -263 -83 -250 -104 3 -5 -5 -14 -17 -21 -13 -7
+-48 -37 -79 -66 -48 -45 -58 -51 -63 -36 -4 9 -4 14 0 10 4 -4 24 8 43 27 20
+19 53 45 73 59 28 19 34 26 22 31 -8 3 -12 2 -9 -4 6 -9 -8 -14 -28 -11 -5 1
+-6 -3 -2 -8 6 -10 -34 -37 -48 -33 -5 1 -6 -2 -3 -6 6 -11 -28 -45 -36 -37
+-11 11 -79 -80 -114 -150 -33 -68 -70 -206 -60 -229 2 -6 5 -1 5 12 1 13 5 21
+10 18 5 -3 12 18 15 48 7 53 71 204 82 193 3 -3 -1 -16 -10 -29 -16 -25 -56
+-133 -56 -152 0 -6 4 -5 9 3 7 11 10 11 18 -3 7 -13 14 -5 37 41 28 58 100
+157 132 183 15 13 17 13 9 1 -5 -8 19 6 53 32 230 178 516 164 714 -33 113
+-113 165 -248 156 -405 -9 -141 -68 -270 -172 -370 -54 -52 -29 -36 38 25 l39
+35 -21 -31 c-49 -71 -187 -154 -292 -174 -30 -6 -65 -16 -77 -22 -32 -16 -166
+-3 -242 23 -35 12 -94 42 -130 67 -49 33 -60 38 -41 17 14 -14 24 -30 23 -33
+-1 -4 1 -9 4 -12 4 -3 3 1 -2 9 -5 9 -3 12 6 9 8 -3 14 -10 14 -16 0 -5 4 -14
+9 -19 6 -5 6 -2 1 6 -6 10 -4 13 6 8 90 -39 148 -60 201 -72 l63 -15 -60 4
+-60 4 55 -14 c72 -19 206 -12 284 16 121 41 271 146 325 224 81 118 121 247
+121 390 0 77 -5 106 -33 188 -41 117 -78 177 -160 255 -65 63 -164 117 -267
+146 -59 16 -185 28 -235 21z"
+                    />
+                  </g>
+                </svg>
+                {Data.label}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </>
+      </>
     </>
   );
 };
