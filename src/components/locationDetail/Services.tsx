@@ -5,7 +5,7 @@ type props = {
 };
 const Services = (props: any) => {
   const { serviceData } = props;
-  console.log("serviceTitle", serviceData);
+  // console.log("serviceTitle", serviceData);
 
   const data = serviceData.map((element: any) => {
     return <>{element.label}</>;

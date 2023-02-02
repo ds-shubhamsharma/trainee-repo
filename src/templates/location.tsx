@@ -148,7 +148,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   return {
     title: document.c_meta_title
       ? document.c_meta_title
-      : `${document.name} Store of MGM Timber`,
+      : `${document.name} Connected Kerb Store`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -159,7 +159,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`
+              : `Find the ${document.name} Connected Kerb ${document.address.city}. We stock high-quality, robust products at competitive rates.`
           }`,
         },
       },
@@ -195,7 +195,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`
+              : `Find the ${document.name} Connected Kerb ${document.address.city}. products at competitive rates.`
           }`,
         },
       },
@@ -233,7 +233,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           name: "twitter:title",
           content: document.c_meta_title
             ? document.c_meta_title
-            : `${document.name} Store of MGM Timber`,
+            : `${document.name}  Connected Kerb Store`,
         },
       },
       {
@@ -243,7 +243,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`
+              : `Find the ${document.name} Connected Kerb ${document.address.city}. products at competitive rates.`
           }`,
         },
       },
