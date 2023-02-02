@@ -5,27 +5,37 @@ type props = {
 };
 const Services = (props: any) => {
   const { serviceData } = props;
-  // console.log("serviceTitle", serviceData);
-
-  const data = serviceData.map((element: any) => {
-    return <>{element.label}</>;
-  });
-
+ 
   return (
     <>
-      <div className="space-y-5 mt-[50px] ">
-        {/* <div className="text-xl font-semibold ">Photo Gallery</div> */}
-        <h2
-          className="text-xl font-semibold mb-8"
-          style={{ textAlign: "center", color: "#894578" }}
-        >
-          Services
-        </h2>
-
-        <div className="grid space-x-5 md:grid-cols-2 lg:grid-cols-3 text-xl">
-          {data}
+     
+       <>
+      <h1 className="text-center mb-10" style={{color:"#894578"}}>Services</h1>
+      <div className="container ">
+        <div className="servicesList service-mid flex flex-wrap gap-y-5">
+          {serviceData?.map((Data: any) => (
+            <div className="block-content flex w-1/4">
+              <svg
+                className="check-icon w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 17.008 16.472"
+              >
+                <path
+                  d="M671.943,10.391,664.63,23.008a1.335,1.335,0,0,1-1.833.491l-6-3.449a1.34,1.34,0,1,1,1.344-2.318l4.835,2.781L669.62,9.055a1.34,1.34,0,0,1,2.323,1.336Z"
+                  transform="translate(-655.623 -7.795)"
+                  fill="#894578"
+                  stroke="#894578"
+                  strokeMiterlimit={6}
+                  strokeWidth={1}
+                  fillRule="nonzero"
+                />
+              </svg>
+              {Data.label}
+            </div>
+          ))}
         </div>
       </div>
+    </>
     </>
   );
 };

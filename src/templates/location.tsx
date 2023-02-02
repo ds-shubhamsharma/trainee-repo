@@ -535,12 +535,13 @@ const Location: Template<ExternalApiRenderData> = ({
                     ""
                   )}
                 </div>
+
+              
                 <PhotoGallery photoGallery={c_imageDetails} />
-                <div>
-                  {" "}
+                
+                <div className="mt-[80px]">
                   <Services serviceData={c_locationServicesData} />
                 </div>
-
                 <div className="flex w-full mt-[140px]">
                   <PhotoSlider photoGallery={_site.c_imageForBanner} />
                   <div className="flex w-1/2 flex-col">
@@ -561,6 +562,8 @@ const Location: Template<ExternalApiRenderData> = ({
                 </div>
               </div>
             </div>
+
+           
           </PageLayout>
         </AnalyticsScopeProvider>
       </AnalyticsProvider>
