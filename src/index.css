@@ -873,7 +873,7 @@ nav[aria-label="Pagination"] button:disabled {
   @apply transform scale-105;
 }
 .splide__slide img {
-  @apply w-full;
+  @apply w-full h-80 object-cover;
 }
 .splide {
   @apply w-full;
