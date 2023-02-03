@@ -148,7 +148,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   return {
     title: document.c_meta_title
       ? document.c_meta_title
-      : `${document.name} Connected Kerb Store`,
+      : `${document.name}Royal Cafe Store`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -159,7 +159,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Find the ${document.name} Connected Kerb ${document.address.city}. We stock high-quality, robust products at competitive rates.`
+              : `Find the ${document.name} Royal Cafe Store ${document.address.city}. Royal Cafe Store`
           }`,
         },
       },
@@ -195,7 +195,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Find the ${document.name} Connected Kerb ${document.address.city}. products at competitive rates.`
+              : `Find the ${document.name}Royal Cafe Store ${document.address.city}. Royal Cafe Store products at competitive rates.`
           }`,
         },
       },
@@ -233,7 +233,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           name: "twitter:title",
           content: document.c_meta_title
             ? document.c_meta_title
-            : `${document.name}  Connected Kerb Store`,
+            : `${document.name} Royal Cafe Store`,
         },
       },
       {
@@ -243,7 +243,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Find the ${document.name} Connected Kerb ${document.address.city}. products at competitive rates.`
+              : `Find the ${document.name} Royal Cafe Store ${document.address.city}. Royal Cafe Store at competitive rates.`
           }`,
         },
       },
@@ -520,7 +520,20 @@ const Location: Template<ExternalApiRenderData> = ({
                 </div>
               )}
             </div>
-
+            <div className="flex w-full mt-[140px]">
+              <PhotoSlider photoGallery={_site.c_imageForBanner} />
+              <div className="flex w-1/2 flex-col lg:w-2/5 xl:w-[47%] relative ml-[6.25rem]">
+                <h1 style={{textAlign:"center",paddingBottom:"10px",color:"#894578"}}>About</h1>
+                <span style={{ fontFamily: "cursive" }}>
+                  {c_aboutSectionForLocation.description}
+                </span>
+                <Link href={""}>
+                  <button className="bg-[#894578]  hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-[10px]">
+                    {c_aboutSectionForLocation.viewMore.label}
+                  </button>
+                </Link>
+              </div>
+            </div>
             <div className="nearby-sec">
               <div className="container">
                 <div className="sec-title">
@@ -535,35 +548,20 @@ const Location: Template<ExternalApiRenderData> = ({
                     ""
                   )}
                 </div>
-
-              
-                <PhotoGallery photoGallery={c_imageDetails} />
-                
-                <div className="mt-[80px]">
-                  <Services serviceData={c_locationServicesData} />
-                </div>
-                <div className="flex w-full mt-[140px]">
-                  <PhotoSlider photoGallery={_site.c_imageForBanner} />
-                  <div className="flex w-1/2 flex-col">
-                    <h1>About</h1>
-                    <span style={{ fontFamily: "cursive" }}>
-                      {c_aboutSectionForLocation.description}
-                    </span>
-                    <Link href={""}>
-                      <button className="bg-[#894578]  hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                        {c_aboutSectionForLocation.viewMore.label}
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="mt-[90px]">
-                  <FaqAccordian Question={c_faqData} />
-                </div>
               </div>
             </div>
 
+            
+            <PhotoGallery photoGallery={c_imageDetails} />
+
+            <div className="mt-[80px]">
+              <Services serviceData={c_locationServicesData} />
+            </div>
            
+            
+            <div className="mt-[90px] w-1/2 flex items-center m-auto">
+              <FaqAccordian Question={c_faqData} />
+            </div>
           </PageLayout>
         </AnalyticsScopeProvider>
       </AnalyticsProvider>

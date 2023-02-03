@@ -54,7 +54,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   document,
 }): HeadConfig => {
   return {
-     title:`${document.c_meta_title?document.c_meta_title:`Cafe Near Me - Find Find Cafe Here Locator Here.`}`,
+     title:`${document.c_meta_title?document.c_meta_title:`Royal Cafe Store Near Me - Royal Cafe Store Here Locator Here.`}`,
      charset: "UTF-8",
      viewport: "width=device-width, initial-scale=1",
      tags: [
@@ -62,7 +62,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
          type: "meta",
          attributes: {
            name: "description",
-           content: `${document.c_meta_description?document.c_meta_description:`products at competitive rates.`}`,
+           content: `${document.c_meta_description?document.c_meta_description:`Royal Cafe Store products at competitive rates.`}`,
          },
        },
        {
@@ -99,14 +99,14 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
          type: "meta",
          attributes: {
            property: "og:description",
-           content: `${document.c_meta_description?document.c_meta_description:`View Find Cafe Here products at competitive rates.`}`,
+           content: `${document.c_meta_description?document.c_meta_description:`Royal Cafe Store Here products `}`,
          },
        },
        {
          type: "meta",
          attributes: {
            property: "og:title",
-           content: `${document.c_meta_title?document.c_meta_title:`Cafe Near me - Find Cafe Here.`}`,
+           content: `${document.c_meta_title?document.c_meta_title:`Royal Cafe Store Near me - Find Cafe Here.`}`,
          },
        },
        {
@@ -134,7 +134,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:title",
-          content: `${document.c_meta_title?document.c_meta_title:`Cafe Near Me .`}`,
+          content: `${document.c_meta_title?document.c_meta_title:`Royal Cafe Store Near Me .`}`,
         },
       },
       {
@@ -173,7 +173,7 @@ const Locator: Template<TemplateRenderProps> = ({ document, __meta }) => {
         item={{
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "MGM ",
+          name: "Cafe ",
           url: stagingBaseurl,
           logo: favicon,
         }}

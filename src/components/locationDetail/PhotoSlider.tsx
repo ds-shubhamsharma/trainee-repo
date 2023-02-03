@@ -13,7 +13,7 @@ const PhotoSlider = (props: any) => {
   ));
   return (
     <>
-     <div className=" w-1/2 h-1/4">
+     <div className=" w-1/3 h-1/4">
 	  <Splide aria-label="Photo Slider">
      
           {photos}

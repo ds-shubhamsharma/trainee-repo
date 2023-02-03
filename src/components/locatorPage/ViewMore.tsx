@@ -30,7 +30,7 @@ export default function ViewMore(props: viewMoreProps): JSX.Element | null {
     <div>
       {pageNumber !== maxPageCount ?<div className="buttons mt-2.5 justify-center !pl-0">
             <div className="ctaBtn">              
-              <button className={className} id={idName} onClick={() => executeSearchWithNewOffset(offset + limit)}>{buttonLabel}</button>
+              <button className={className} style={{backgroundColor:"#9cc0f9"}} id={idName} onClick={() => executeSearchWithNewOffset(offset + limit)}>{buttonLabel}</button>
             </div>
           </div>:""}
     </div>

@@ -516,7 +516,7 @@ function UnwrappedGoogleMaps({
               ""
             )}
           </div>
-          {/* {result.rawData.mainPhone?
+          {result.rawData.mainPhone?
     <div className="icon-row">
       <div className="icon"> <img className=" " src={Phonesvg} width="20" height="20" alt="" />
       </div>
@@ -525,7 +525,7 @@ function UnwrappedGoogleMaps({
         <a id="address" className="notHighlight" href={`tel:${result.rawData.mainPhone}`}>
           {result.rawData.mainPhone}</a>
       </div>
-    </div>:''} */}
+    </div>:''}
 
           {result.rawData.hours && result.rawData.hours.reopenDate ? (
             ""
@@ -570,7 +570,7 @@ function UnwrappedGoogleMaps({
               data-listener="false"
               data-latitude={result.rawData.displayCoordinate.latitude}
               data-longitude={result.rawData.displayCoordinate.longitude}
-              className="cursor-pointer  getdirection btn"
+              className=" bg-[#894578] ml-2 text-white pl-2 pr-2 pt-3 hover:bg-hover-btn"
               rel="noopener noreferrer"
               data-city={result.rawData.address.city}
               data-country={result.rawData.address.countryCode}
@@ -587,7 +587,7 @@ function UnwrappedGoogleMaps({
               data-city={result.rawData.address.city}
               data-country={result.rawData.address.countryCode}
               data-region={result.rawData.address.region}
-              className="cursor-pointer getdirection1 btn"
+              className=" bg-[#894578] ml-2 text-white pl-2 pr-2 pt-3 hover:bg-hover-btn"
               rel="noopener noreferrer"
             >
               {/* <div dangerouslySetInnerHTML={{__html: Directionsvg}}/> */}
