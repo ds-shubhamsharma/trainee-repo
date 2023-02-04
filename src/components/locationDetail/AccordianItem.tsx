@@ -16,7 +16,8 @@ export default function FaqAccordian(props: any) {
   return (
     <>
     <div className="h-80">
-      <h2></h2>
+    <h2  style={{textAlign:"center",paddingBottom:"10px",color:"#894578",fontSize: "x-large"}}>Cafe FAQs</h2>
+
       {props?.Question?.map((que: any, index: any) => {
         return (
           <>

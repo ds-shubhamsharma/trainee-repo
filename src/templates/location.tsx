@@ -559,7 +559,7 @@ const Location: Template<ExternalApiRenderData> = ({
             </div>
            
             
-            <div className="mt-[90px] w-1/2 flex items-center m-auto">
+            <div className="mt-[90px] w-1/2 flex items-center m-auto ">
               <FaqAccordian Question={c_faqData} />
             </div>
           </PageLayout>

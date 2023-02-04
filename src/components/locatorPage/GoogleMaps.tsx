@@ -570,7 +570,7 @@ function UnwrappedGoogleMaps({
               data-listener="false"
               data-latitude={result.rawData.displayCoordinate.latitude}
               data-longitude={result.rawData.displayCoordinate.longitude}
-              className=" bg-[#894578] ml-2 text-white pl-2 pr-2 pt-3 hover:bg-hover-btn"
+              className="getdirection btn"
               rel="noopener noreferrer"
               data-city={result.rawData.address.city}
               data-country={result.rawData.address.countryCode}
@@ -587,7 +587,7 @@ function UnwrappedGoogleMaps({
               data-city={result.rawData.address.city}
               data-country={result.rawData.address.countryCode}
               data-region={result.rawData.address.region}
-              className=" bg-[#894578] ml-2 text-white pl-2 pr-2 pt-3 hover:bg-hover-btn"
+              className="getdirection btn"
               rel="noopener noreferrer"
             >
               {/* <div dangerouslySetInnerHTML={{__html: Directionsvg}}/> */}
