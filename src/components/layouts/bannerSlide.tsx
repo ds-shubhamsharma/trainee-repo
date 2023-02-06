@@ -13,7 +13,7 @@ const BannerSlide = (props: any) => {
   return (
     <>
       <div className="">
-        <Splide>{photos}</Splide>
+        <Splide  aria-label="Photo Slider">{photos}</Splide>
       </div>
     </>
   );
