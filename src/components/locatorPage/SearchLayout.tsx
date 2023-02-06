@@ -229,7 +229,7 @@ const SearchLayout = (props: any): JSX.Element => {
       // searchActions.resetFacets();
       FirstLoad();
     }
-     if (isLoading) {
+    if (isLoading) {
       $("body").addClass("overflow-hidden");
     }
   }, []);
@@ -296,7 +296,7 @@ const SearchLayout = (props: any): JSX.Element => {
                   entityType: "location",
                   fieldApiName: "address.region",
                 },
-            
+
                 // {
                 //   entityType: "location",
                 //   fieldApiName: "address.countryCode",
