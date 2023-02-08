@@ -59,6 +59,7 @@ import Header from "../components/layouts/header";
 import Example from "../components/locationDetail/AccordianItem";
 import FaqAccordian from "../components/locationDetail/AccordianItem";
 import Services from "../components/locationDetail/Services";
+import { geoSearch } from "../config/geoSearch";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -85,6 +86,10 @@ export const config: TemplateConfig = {
       "c_aboutSectionForLocation",
       "c_faqData.name",
       "c_faqData.answer",
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
+      "dm_directoryParents.meta.entityType",
+      "dm_directoryParents.c_addressRegionDisplayName",
 
       // "cityCoordinate",
     ],
@@ -264,14 +269,15 @@ export const transformProps: TransformProps<ExternalApiData> = async (
       : data.document.displayCoordinate.longitude
   }`;
 
-  const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=4&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
-  // console.log(url);
+  // const url = `${geoSearch.endpoints.geoSearchFormat}?radius=${geoSearch.locationRadius}&api_key=${geoSearch.apiKey}&v=20220511&&entityTypes=location&limit=4`;
+  //  const url="https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=500&api_key=e7e9f09435112aea8b0906d738db4d15&v=20230110&entityTypes=location&location=jaipur&limit=4&ressolvePlaceholders=true"
+  const url = `${geoSearch.endpoints.geoSearchFormat}?radius=500&api_key=${geoSearch.api_Key}&v=20230110&entityTypes=location&location=jaipur&limit=4&ressolvePlaceholders=true`;
+
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
   )) as nearByLocation;
   return { ...data, externalApiData };
 };
-
 type ExternalApiRenderData = TemplateRenderProps & {
   externalApiData: nearByLocation;
 };
@@ -300,10 +306,12 @@ const Location: Template<ExternalApiRenderData> = ({
     displayCoordinate,
     cityCoordinate,
     name,
+    dm_directoryParents,
     c_locationServicesData,
     c_aboutSectionForLocation,
     c_faqData,
   } = document;
+  // console.log("jhxkjfcghf", externalApiData);
   // console.log("c_locationServicesData", c_locationServicesData);
   let templateData = { document: document, __meta: __meta };
   let hoursSchema = [];
@@ -343,7 +351,7 @@ const Location: Template<ExternalApiRenderData> = ({
     }
   }
   document.dm_directoryParents &&
-    document.dm_directoryParents.map((i: any, index: any) => {
+    document.dm_directoryParents?.map((i: any, index: any) => {
       if (i.meta.entityType.id == "ce_country") {
         document.dm_directoryParents[index].name =
           document.dm_directoryParents[index].name;
@@ -363,7 +371,7 @@ const Location: Template<ExternalApiRenderData> = ({
         });
       } else if (i.meta.entityType.id == "ce_region") {
         let url = "";
-        document.dm_directoryParents.map((j: any) => {
+        document.dm_directoryParents?.map((j: any) => {
           if (
             j.meta.entityType.id != "ce_region" &&
             j.meta.entityType.id != "ce_city" &&
@@ -470,6 +478,8 @@ const Location: Template<ExternalApiRenderData> = ({
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout global={_site}>
+          <BreadCrumbs name={name} parents={dm_directoryParents} address={address}></BreadCrumbs>
+
             <div className="container">
               <div className="banner-text banner-dark-bg justify-center text-center">
                 <h1 className="">
@@ -523,7 +533,15 @@ const Location: Template<ExternalApiRenderData> = ({
             <div className="flex w-full mt-[140px]">
               <PhotoSlider photoGallery={_site.c_imageForBanner} />
               <div className="flex w-1/2 flex-col lg:w-2/5 xl:w-[47%] relative ml-[6.25rem]">
-                <h1 style={{textAlign:"center",paddingBottom:"10px",color:"#894578"}}>About</h1>
+                <h1
+                  style={{
+                    textAlign: "center",
+                    paddingBottom: "10px",
+                    color: "#894578",
+                  }}
+                >
+                  About
+                </h1>
                 <span style={{ fontFamily: "cursive" }}>
                   {c_aboutSectionForLocation.description}
                 </span>
@@ -533,6 +551,18 @@ const Location: Template<ExternalApiRenderData> = ({
                   </button>
                 </Link>
               </div>
+            </div>
+
+            <div className="mt-[80px]">
+              <PhotoGallery photoGallery={c_imageDetails} />
+            </div>
+
+            <div className="mt-[80px]">
+              <Services serviceData={c_locationServicesData} />
+            </div>
+
+            <div className="mt-[90px] w-1/2 flex items-center m-auto ">
+              <FaqAccordian Question={c_faqData} />
             </div>
             <div className="nearby-sec">
               <div className="container">
@@ -549,18 +579,6 @@ const Location: Template<ExternalApiRenderData> = ({
                   )}
                 </div>
               </div>
-            </div>
-
-            
-            <PhotoGallery photoGallery={c_imageDetails} />
-
-            <div className="mt-[80px]">
-              <Services serviceData={c_locationServicesData} />
-            </div>
-           
-            
-            <div className="mt-[90px] w-1/2 flex items-center m-auto ">
-              <FaqAccordian Question={c_faqData} />
             </div>
           </PageLayout>
         </AnalyticsScopeProvider>

@@ -137,7 +137,6 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                         </div>
                       </>
                     )}
-                    {console.log("result?.rawData=====", result?.rawData)}
 
                     {/* <div className={`storelocation-openCloseTime  capitalize hidden`}>
                     {hoursopen?

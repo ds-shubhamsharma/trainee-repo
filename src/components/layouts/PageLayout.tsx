@@ -12,6 +12,7 @@ type Props = {
 };
 
 const PageLayout = ({ title, _site, global, children }: Props) => {
+  console.log("children==",children)
   return (
     <>
       <Header
