@@ -18,6 +18,7 @@ import PageLayout from "../components/layouts/PageLayout";
 import { favicon, regionNames, stagingBaseurl } from "../../sites-global/global";
 import Header from "../components/layouts/header";
 import Footer from "../components/layouts/footer";
+import BreadCrumbu from "../components/layouts/BreadCrumbu";
 
 
 
@@ -282,12 +283,12 @@ const country: Template<TemplateRenderProps> = ({
         headerLogo={_site.c_headerLogo.headerLogo}
         headerLinks={_site.c_navigationLink}
       />
-        <BreadCrumbs
-          name={regionNames.of(name)}
-          address={address}
+        <BreadCrumbu
+          name={name}
           parents={dm_directoryParents}
-          baseUrl={relativePrefixToRoot}
-        ></BreadCrumbs>
+          // baseUrl={relativePrefixToRoot}
+          address={""}
+        ></BreadCrumbu>
         {/* <div className="location-dtl">
           <Banner name={regionNames.of(name)} c_bannerImage={bannerimage} />
         </div> */}

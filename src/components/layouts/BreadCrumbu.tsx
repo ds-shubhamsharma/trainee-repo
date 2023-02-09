@@ -88,8 +88,8 @@
 
 
 import * as React from "react";
-//  import { livSiteUrl, stagingBaseUrl } from "../../sites-global/global";
- import { svgIcons } from "../components/commons/svgIcons";
+//  import { livSiteUrl, stagingBaseUrl } from "../sites-global/global";
+//  import { svgIcons } from "../commons/svgIcon";
 import { Link } from "@yext/pages/components";
 
 type data = {
@@ -98,7 +98,7 @@ type data = {
   address: any;
 };
 
-const BreadCrumbu = (props: data) => {
+const BreadCrumbs = (props: data) => {
   const [list, setList] = React.useState(null);
 
   var breadcrumbs;
@@ -111,7 +111,7 @@ const BreadCrumbu = (props: data) => {
   const setURL = (parents: any) => {
     if (parents) {
       for (let i = 0; i < parents.length; i++) {
-        if (parents[i].meta.entityType.id == "pizza_country") {
+        if (parents[i].meta.entityType.id == "ce_country") {
           parents[i].name = (parents[i].name);
           parents[i].slug = parents[i].slug;
 
@@ -119,14 +119,14 @@ const BreadCrumbu = (props: data) => {
             name: parents[i].name,
             slug: parents[i].slug,
           });
-        } else if (parents[i].meta.entityType.id == "pizza_region") {
+        } else if (parents[i].meta.entityType.id == "ce_region") {
           data.push({
             name: parents[i].name,
             slug: `${parents[i - 1].slug}/${parents[i].slug}`,
           });
           parents[i].name = parents[i].name;
           parents[i].slug = `${parents[i - 1].slug}/${parents[i].slug}`;
-        } else if (parents[i].meta.entityType.id == "pizza_city") {
+        } else if (parents[i].meta.entityType.id == "ce_city") {
           parents[i].name = parents[i].name;
           parents[i].slug = `${parents[i - 1].slug}/${parents[i].slug}`;
           data.push({
@@ -164,7 +164,7 @@ const BreadCrumbu = (props: data) => {
       <div className="container">
         <ul>
           <li>
-            <a href="">{svgIcons.homeIcon}</a>
+            {/* <a href="">{svgIcons.homeIcon}</a> */}
           </li>
 
           {list ? (
@@ -193,4 +193,4 @@ const BreadCrumbu = (props: data) => {
   );
 };
 
-export default BreadCrumbu;
+export default BreadCrumbs;

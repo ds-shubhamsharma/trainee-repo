@@ -18,6 +18,7 @@ import { favicon, stagingBaseurl } from "../../sites-global/global";
 import { StaticData } from "../../sites-global/staticData";
 import Footer from "../components/layouts/footer";
 import Header from "../components/layouts/header";
+import BreadCrumbu from "../components/layouts/BreadCrumbu";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -245,12 +246,12 @@ const region: Template<TemplateRenderProps> = ({
   let bannerimage = c_banner_image && c_banner_image.image.url;
   return (
     <>
-        <BreadCrumbs
+        <BreadCrumbu
           name={name}
           parents={dm_directoryParents}
-          baseUrl={relativePrefixToRoot}
-          address={address}
-        ></BreadCrumbs>
+          // baseUrl={relativePrefixToRoot}
+          address={""}
+        ></BreadCrumbu>
         <Header
         headerLogo={_site.c_headerLogo.headerLogo}
         headerLinks={_site.c_navigationLink}

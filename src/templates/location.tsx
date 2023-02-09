@@ -60,6 +60,7 @@ import Example from "../components/locationDetail/AccordianItem";
 import FaqAccordian from "../components/locationDetail/AccordianItem";
 import Services from "../components/locationDetail/Services";
 import { geoSearch } from "../config/geoSearch";
+import BreadCrumbu from "../components/layouts/BreadCrumbu";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -478,7 +479,7 @@ const Location: Template<ExternalApiRenderData> = ({
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout global={_site}>
-          <BreadCrumbs name={name} parents={dm_directoryParents} address={address}></BreadCrumbs>
+          <BreadCrumbu name={name} parents={dm_directoryParents} address={address} ></BreadCrumbu>
 
             <div className="container">
               <div className="banner-text banner-dark-bg justify-center text-center">

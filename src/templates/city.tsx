@@ -33,6 +33,7 @@ import PageLayout from "../components/layouts/PageLayout";
 import OpenClose from "../components/commons/openClose";
 import timesvg from "../images/watch-icn.svg";
 import { Link } from "@yext/pages/components";
+import BreadCrumbu from "../components/layouts/BreadCrumbu";
 var currentUrl = "";
 export const config: TemplateConfig = {
   stream: {
@@ -490,12 +491,12 @@ const City: Template<TemplateRenderProps> = ({
         }}
       />
       <PageLayout global={_site}>
-        <BreadCrumbs
+      <BreadCrumbu
           name={name}
-          address={address}
           parents={dm_directoryParents}
-          baseUrl={relativePrefixToRoot}
-        ></BreadCrumbs>
+          // baseUrl={relativePrefixToRoot}
+          address={""}
+        ></BreadCrumbu>
 
         <div className="content-list city-page">
           <div className="container mx-auto">
