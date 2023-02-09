@@ -89,7 +89,7 @@
 
 import * as React from "react";
 //  import { livSiteUrl, stagingBaseUrl } from "../sites-global/global";
-import { breadcrumbhome} from "../../../sites-global/global";
+import { breadcrumbhome,conversionDetailsDirection} from "../../../sites-global/global";
 import { Link } from "@yext/pages/components";
 
 type data = {
@@ -163,8 +163,14 @@ const BreadCrumbs = (props: data) => {
     >
       <div className="container">
         <ul>
-          <li>
-            <a href="/">{breadcrumbhome}</a>
+        <li>
+            <Link className="home" href="/"
+             data-ya-track="Breadcrumbs"
+             eventName={`Breadcrumbs`}
+             rel="noopener noreferrer"
+             conversionDetails={conversionDetailsDirection}>
+            <div dangerouslySetInnerHTML={{__html: breadcrumbhome}}/>
+            </Link>
           </li>
 
           {list ? (
