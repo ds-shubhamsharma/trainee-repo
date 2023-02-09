@@ -89,7 +89,7 @@
 
 import * as React from "react";
 //  import { livSiteUrl, stagingBaseUrl } from "../sites-global/global";
-//  import { svgIcons } from "../commons/svgIcon";
+import { breadcrumbhome} from "../../../sites-global/global";
 import { Link } from "@yext/pages/components";
 
 type data = {
@@ -143,7 +143,7 @@ const BreadCrumbs = (props: data) => {
             }
             rel="noopener noreferrer"
             eventName={"BreadCrumbs" + (index + 1)}
-            style={{ color: "#ab131b" }}
+            style={{ color: "#894578" }}
           >
             {crumb.name}
           </Link>
@@ -159,12 +159,12 @@ const BreadCrumbs = (props: data) => {
   return (
     <div
       className="breadcrumb"
-      style={{ backgroundColor: "whitesmoke", marginTop: "10px" }}
+      style={{ backgroundColor: "#894578", marginTop: "10px" }}
     >
       <div className="container">
         <ul>
           <li>
-            {/* <a href="">{svgIcons.homeIcon}</a> */}
+            <a href="/">{breadcrumbhome}</a>
           </li>
 
           {list ? (
@@ -176,7 +176,7 @@ const BreadCrumbs = (props: data) => {
                   {" "}
                   <a
                     href={props.address.city + ".html"}
-                    style={{ color: "#ab131b" }}
+                    style={{ color: "#894578" }}
                   >
                     {props.address.city ? props.address.city : ""}
                   </a>
@@ -186,7 +186,7 @@ const BreadCrumbs = (props: data) => {
               )}
             </>
           )}
-          <li style={{ color: "#ab131b" }}>{props && props.name}</li>
+          <li style={{ color: "#894578" }}>{props && props.name}</li>
         </ul>
       </div>
     </div>

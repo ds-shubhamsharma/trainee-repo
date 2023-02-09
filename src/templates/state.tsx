@@ -99,9 +99,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         attributes: {
           name: "description",
           content: `${
-            document.c_meta_description
-              ? document.c_meta_description
-              : ""
+            document.c_meta_description ? document.c_meta_description : ""
           }`,
         },
       },
@@ -135,9 +133,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         attributes: {
           property: "og:description",
           content: `${
-            document.c_meta_description
-              ? document.c_meta_description
-              : ""
+            document.c_meta_description ? document.c_meta_description : ""
           }`,
         },
       },
@@ -183,9 +179,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         attributes: {
           name: "twitter:description",
           content: `${
-            document.c_meta_description
-              ? document.c_meta_description
-              : ""
+            document.c_meta_description ? document.c_meta_description : ""
           }`,
         },
       },
@@ -246,25 +240,25 @@ const region: Template<TemplateRenderProps> = ({
   let bannerimage = c_banner_image && c_banner_image.image.url;
   return (
     <>
-        <BreadCrumbu
-          name={name}
-          parents={dm_directoryParents}
-          // baseUrl={relativePrefixToRoot}
-          address={""}
-        ></BreadCrumbu>
-        <Header
+      <Header
         headerLogo={_site.c_headerLogo.headerLogo}
         headerLinks={_site.c_navigationLink}
-      />
-        <div className="content-list">
-          <div className="container">
-            <div className="sec-title">
-              <h2 style={{ textAlign: "center" }}>{name}</h2>
-            </div>
-            <ul className="region-list">{childrenDivs}</ul>
+      />{" "}
+      <BreadCrumbu
+        name={name}
+        parents={dm_directoryParents}
+        // baseUrl={relativePrefixToRoot}
+        address={""}
+      ></BreadCrumbu>
+      <div className="content-list">
+        <div className="container">
+          <div className="sec-title">
+            <h2 style={{ textAlign: "center" }}>{name}</h2>
           </div>
+          <ul className="region-list">{childrenDivs}</ul>
         </div>
-        <Footer
+      </div>
+      <Footer
         footerServices={_site.c_footerServices}
         getHelps={_site.c_getHelps}
         moreStuff={_site.c_moreStuff}
