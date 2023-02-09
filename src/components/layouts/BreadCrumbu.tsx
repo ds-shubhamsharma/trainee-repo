@@ -89,8 +89,9 @@
 
 import * as React from "react";
 //  import { livSiteUrl, stagingBaseUrl } from "../sites-global/global";
-import { breadcrumbhome,conversionDetailsDirection} from "../../../sites-global/global";
+//  import { svgIcons } from "../commons/svgIcon";
 import { Link } from "@yext/pages/components";
+import { svgIcons } from "../commons/svgIcons";
 
 type data = {
   name: any;
@@ -159,18 +160,12 @@ const BreadCrumbs = (props: data) => {
   return (
     <div
       className="breadcrumb"
-      style={{ backgroundColor: "#894578", marginTop: "10px" }}
+      style={{ backgroundColor: "white", marginTop: "10px" }}
     >
       <div className="container">
         <ul>
-        <li>
-            <Link className="home" href="/"
-             data-ya-track="Breadcrumbs"
-             eventName={`Breadcrumbs`}
-             rel="noopener noreferrer"
-             conversionDetails={conversionDetailsDirection}>
-            <div dangerouslySetInnerHTML={{__html: breadcrumbhome}}/>
-            </Link>
+          <li>
+            <a href="">{svgIcons.breadcrumbhome}</a>
           </li>
 
           {list ? (
