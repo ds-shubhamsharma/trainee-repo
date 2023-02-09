@@ -165,7 +165,7 @@ const BreadCrumbs = (props: data) => {
       <div className="container">
         <ul>
           <li>
-            <a href="">{svgIcons.breadcrumbhome}</a>
+            <a href="/">{svgIcons.breadcrumbhome}</a>
           </li>
 
           {list ? (
